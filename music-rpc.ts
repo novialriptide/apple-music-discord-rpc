@@ -75,6 +75,7 @@ class AppleMusicDiscordRPC {
           start = Math.ceil(Date.now() - props.playerPosition * 1000);
         }
 
+        const dolby = "https://avatars.githubusercontent.com/u/35881688?v=4"
         // EVERYTHING must be less than or equal to 128 chars long
         const activity: Activity = {
           // @ts-ignore: "listening to" is allowed in recent Discord versions
@@ -95,6 +96,7 @@ class AppleMusicDiscordRPC {
           activity.assets = {
             large_image: infos.artworkUrl ?? "appicon",
             large_text: AppleMusicDiscordRPC.truncateString(props.album),
+            small_image: dolby, small_text: "Dolby Atmos",
           };
         }
 
